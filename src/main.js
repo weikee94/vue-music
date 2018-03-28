@@ -1,7 +1,12 @@
+import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App'
+import router from './router'
+import fastclick from 'fastclick'
 
 import 'common/stylus/index.styl'
+
+fastclick.attach(document.body)
 
 // new Vue({
 //   el: '#app',
@@ -10,7 +15,8 @@ import 'common/stylus/index.styl'
 
 let vm = new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
+  router
 })
 
 Vue.use({
